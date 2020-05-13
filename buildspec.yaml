@@ -1,0 +1,8 @@
+version: 0.2
+
+phases:
+  build:
+    commands:
+      - echo "Packaging CloudFormation template + uploading to S3"
+      - aws cloudformation package --template bucket.yaml --s3-bucket $CODEPIPELINE_BUCKET
+      - echo "Done!"
